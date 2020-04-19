@@ -6,7 +6,7 @@
 
   "content_scripts": [
     {
-      "matches": ["https://nodejs.org/dist/latest-v13.x/docs/*"],
+      "matches": ["https://nodejs.org/dist/latest-v13.x/docs/api/*.html"],
       "js": ["src/custom-elements.min.js", "src/main.js"],
       "css": ["./css/styles.css"]
     }
