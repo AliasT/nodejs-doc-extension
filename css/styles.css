@@ -1,0 +1,30 @@
+#toc {
+  position: fixed;
+  right: 0;
+  top: 0;
+  max-width: 400px;
+  height: 100%;
+  padding: 0 16px;
+  overflow: auto;
+  background: #e0ebf5;
+}
+
+#column1 {
+  padding-right: calc(2rem + 400px) !important;
+}
+
+#column1 h3,
+#column1 h2 {
+  background: #e0ebf5;
+  padding: 8px 0;
+}
+
+#column1 h3 code {
+  background: transparent;
+}
+
+span > .mark,
+span > .mark:visited {
+  top: 7px !important;
+  right: 8px !important;
+}

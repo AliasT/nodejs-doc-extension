@@ -1,0 +1,14 @@
+{
+  "name": "Nodejs doc extension",
+  "version": "1.0",
+  "description": "Beautify nodejs doc",
+  "manifest_version": 2,
+
+  "content_scripts": [
+    {
+      "matches": ["https://nodejs.org/dist/latest-v13.x/docs/*"],
+      "js": ["src/custom-elements.min.js", "src/main.js"],
+      "css": ["./css/styles.css"]
+    }
+  ]
+}
