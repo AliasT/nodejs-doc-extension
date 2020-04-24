@@ -9,6 +9,10 @@
       "matches": ["https://nodejs.org/dist/latest-v13.x/docs/api/*.html"],
       "js": ["src/custom-elements.min.js", "src/main.js"],
       "css": ["./css/styles.css"]
+    },
+    {
+      "matches": ["https://shimo.im/docs/*"],
+      "css": ["./css/shimo.css"]
     }
   ]
 }

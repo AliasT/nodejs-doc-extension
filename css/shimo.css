@@ -1,0 +1,17 @@
+/*  石墨文档样式覆盖 */
+.page-header-container {
+  position: fixed !important;
+  width: 100%;
+  transform: translateY(-100%);
+  overflow: visible !important;
+  z-index: 10;
+}
+
+[data-test="page-header-left"],
+[data-test="page-header-right"] {
+  transform: translateY(100%) !important;
+}
+
+.ql-title-box {
+  padding-top: 40px !important;
+}
