@@ -3,12 +3,19 @@
   "version": "1.0",
   "description": "Beautify nodejs doc",
   "manifest_version": 2,
-
   "content_scripts": [
     {
-      "matches": ["https://nodejs.org/*/api/*.html"],
-      "js": ["src/custom-elements.min.js", "src/main.js"],
-      "css": ["./css/styles.css"]
+      "matches": [
+        "https://nodejs.org/*/api/*.html"
+      ],
+      "js": [
+        "src/custom-elements.min.js",
+        "src/fuzzy-search.js",
+        "src/main.js"
+      ],
+      "css": [
+        "./css/styles.css"
+      ]
     }
   ]
 }

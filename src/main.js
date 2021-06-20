@@ -17,21 +17,28 @@ tmpl.innerHTML = `
 			left: 50%;
 			transform: translate(-50%);
 			width: 600px;
-			padding: 16px;
+			// padding: 16px;
 			border: solid 1px #ccc;
 			border-radius: 8px;
 			background: aliceblue;
 		}
+
+    #search-input-input-container {
+      padding: 16px;
+      box-shadow: 0px 6px 20px 0px rgb(158 158 158 / 27%);
+    }
+
 		#search-input-input {
 			display: block;
 			width: 100%;
 			line-height: 28px;
 			font-size: 18px;
-			margin-bottom: 10px;
 		}
+
 		#search-input-results {
 			max-height: 600px;
 			overflow-y: scroll;
+      padding: 16px;
 		}
 
 		#search-input-results a {
@@ -44,14 +51,17 @@ tmpl.innerHTML = `
 			background: #438562;
 			color: #fff;
 		}
+	</style>
 
-
-	</style> <!-- look ma, scoped styles -->
 	<div id="search-input">
-		<input id="search-input-input" />
+		<div id="search-input-input-container">
+      <input id="search-input-input" />
+    </div>
 		<div id="search-input-results" tabIndex="1">
 		</div>
 	</div>
+
+
 `;
 
 customElements.define(
@@ -99,7 +109,7 @@ customElements.define(
 
       // esc 隐藏
       this.shadowRoot.addEventListener("keyup", (e) => {
-        if (e.target.code === "Escape") {
+        if (e.code === "Escape") {
           this.open = false;
         }
       });
@@ -120,7 +130,7 @@ customElements.define(
         );
         const keywords = input.value;
         links.forEach((a) => {
-          if (a.innerText.startsWith(keywords)) {
+          if (fuzzysearch(keywords, a.innerText)) {
             a.style.display = "block";
           } else {
             a.style.display = "none";
