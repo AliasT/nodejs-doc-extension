@@ -154,4 +154,8 @@ customElements.define(
       searchInput.open = true;
     }
   });
+
+  document
+    .querySelector("#toc summary")
+    .addEventListener("click", (e) => e.preventDefault());
 })();
